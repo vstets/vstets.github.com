@@ -2,6 +2,10 @@
   text-align: right !important;
 }
 
+.table th, .table td {
+  border-top: 0px solid black !important;
+}
+
 .header,
 .table_header_large,
 .table_header_middle,
@@ -18,7 +22,7 @@
 }
 
 .table_header_large {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .table_header_middle {
