@@ -1,0 +1,30 @@
+.text_align_right {
+  text-align: right !important;
+}
+
+.header,
+.table_header_large,
+.table_header_middle,
+.table_header_small {
+  text-align: center;
+  font-weight: bold;
+}
+
+.header,
+.table_header_large,
+.table_header_middle
+{
+  color: #0C5AA6;
+}
+
+.table_header_large {
+  font-size: 20px;
+}
+
+.table_header_middle {
+  font-size: 16px;
+}
+
+.table_header_small {
+  font-size: 14px;
+}
