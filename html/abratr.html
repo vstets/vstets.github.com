@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>V.Stets. Software developer</title>
+
+  <link href="../libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../libs/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+  <link href="../css/main.css" rel="stylesheet" type="text/css">
+
+  <script src="../libs/jquery/jquery-2.0.3.js"></script>
+  <script src="../libs/bootstrap/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+    $(function(){
+
+      // Dictionaries for replase
+      var dict= {
+        "en": "qwertyuiop[]asdfghjkl;'zxcvbnm,./QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>?",
+        "ua": "йцукенгшщзхїфівапролджєячсмитьбю.ЙЦУКЕНГШЩЗХЇФІВАПРОЛДЖЄЯЧСМИТЬБЮ,",
+        "ru": "йцукенгшщзхъфывапролджэячсмитьбю.ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,"
+      };
+
+      // Add <option> to <select> from variable "dict"
+      $(".selectTransformRule").each(function(){
+        me = this;
+        for(var key in dict){
+          $(me).append($('<option>', {
+                value: key,
+                text : key
+              }));
+        }
+      });
+
+      // For change default choise of select
+      // another then in #selectFromLang
+      $($("#selectToLang")[0]).append($("#selectToLang")[0][0]);
+
+      // Transform abra-cadabra to text
+      $("#btnTransform").bind("click", function(){
+        $("#outpTxtArea").val(
+          function(){
+            var strForTransform = $("#inpTxtArea").val();
+            var dictFromLang = $("#selectFromLang").find(":selected").val();
+            var dictToLang = $("#selectToLang").find(":selected").val();
+            var hasChar;
+            // If selected dictionaries is not eqal - transform,
+            // else - return without changes
+            if (dictFromLang !== dictToLang) {
+              for (var i = 0; i < dict[dictFromLang].length; i++){
+                do {
+                  hasChar = strForTransform.indexOf(dict[dictFromLang][i]);
+                  strForTransform = strForTransform.replace(dict[dictFromLang][i], dict[dictToLang][i]);
+                } while (hasChar >= 0);
+              }
+            }
+            return strForTransform;
+          }
+        );
+      });
+
+    });// End of $(function(){...}
+  </script>
+
+</head>
+
+<body>
+  <div id="wrap">
+    <h1 class="header">Volodymyr Stets</h1>
+    <h3 class="header">Software developer</h3>
+    <br>
+
+    <div class="container">
+
+      <ul class="nav nav-tabs nav-justified">
+        <li><a href="../index.html">Resume</a></li>
+        <li><a href="../html/contact.html">Contact</a></li>
+        <li class="active"><a href="#">Abra-cadabra</a></li>
+        <li><a href="../html/about.html">About</a></li>
+      </ul>
+      <br>
+
+      <form class="form-horizontal" role="form" onsubmit="return false;">
+
+        <div class="form-group">
+          <label class="col-xs-2 control-label">Transform rules:</label>
+          <div class="col-xs-2">
+            <label class="control-label" for="selectFromLang">From:</label>
+            <select class="form-control selectTransformRule" id="selectFromLang"></select>
+          </div>
+          <div class="col-xs-2">
+            <label class="control-label" for="selectToLang">To:</label>
+            <select class="form-control selectTransformRule" id="selectToLang"></select>
+          </div>
+          <div class="col-xs-8"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="inpTxtArea" class="col-xs-2 control-label">Aabra-cadabra:</label>
+          <div class="col-xs-10">
+            <input type="text" class="form-control" id="inpTxtArea" placeholder="Input abra-cadabra">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-xs-2"></div>
+          <div class="col-xs-10">
+            <button type="button" class="btn btn-primary" id="btnTransform">Transform</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="outpTxtArea" class="col-xs-2 control-label">Result:</label>
+          <div class="col-xs-10">
+            <textarea id="outpTxtArea" readonly class="form-control"></textarea>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          Volodymyr Stets 2013 &copy;
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

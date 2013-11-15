@@ -1,0 +1,26 @@
+JQuery
+http://jquery.com/
+
+TwBs v3.0.2
+http://twbs.github.io/bootstrap/
+
+Git
+http://git-scm.com/
+
+Github
+https://github.com/
+
+Ubuntu 12.04 LTS
+http://www.ubuntu.com/
+
+Firefox
+http://www.mozilla.org/
+
+Firebug
+https://www.getfirebug.com/
+
+Chromium
+http://www.chromium.org/
+
+Subline Text
+http://www.sublimetext.com/
