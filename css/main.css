@@ -8,7 +8,7 @@ body{
   height: 100%;
   margin: 0 auto -41px 0;
 }
-#wrap .table-wrap {
+#wrap .scroll-area {
   height: 650px;
   overflow: auto;
 }
