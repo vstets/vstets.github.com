@@ -10,7 +10,8 @@ body{
 }
 #wrap .scroll-area {
   height: 650px;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 footer {
