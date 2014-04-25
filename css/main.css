@@ -7,10 +7,9 @@ body{
   height: auto !important;
   height: 100%;
   margin: 0 auto -41px 0;
-  padding-bottom: 60px;
 }
 #wrap .table-wrap {
-  height: 600px;
+  height: 650px;
   overflow: auto;
 }
 
