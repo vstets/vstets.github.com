@@ -9,7 +9,7 @@ body{
   margin: 0 auto -41px 0;
 }
 #wrap .scroll-area {
-  height: 650px;
+  height: 645px;
   overflow-x: hidden;
   overflow-y: auto;
 }
