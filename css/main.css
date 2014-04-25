@@ -15,7 +15,6 @@ body{
 
 #wrap .container .scroll-area {
   height: 645px;
-  margin: 10px 0;
   overflow-x: hidden;
   overflow-y: auto;
 }
