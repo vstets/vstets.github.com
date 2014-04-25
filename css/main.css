@@ -8,8 +8,14 @@ body{
   height: 100%;
   margin: 0 auto -41px 0;
 }
-#wrap .scroll-area {
+
+#wrap .container {
+  margin-bottom: 41px;
+}
+
+#wrap .container .scroll-area {
   height: 645px;
+  margin: 10px 0;
   overflow-x: hidden;
   overflow-y: auto;
 }
